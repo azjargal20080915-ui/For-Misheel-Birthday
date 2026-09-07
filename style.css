@@ -568,7 +568,8 @@ audio {
     radial-gradient(circle at 82% 20%, rgba(255, 207, 228, 0.82), transparent 20%),
     radial-gradient(circle at 50% 80%, rgba(197, 228, 255, 0.7), transparent 22%),
     linear-gradient(135deg, #fffafc 0%, #edf7ff 38%, #fff1f7 100%);
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .floating-hearts {
