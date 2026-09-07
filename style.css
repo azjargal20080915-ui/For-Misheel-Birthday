@@ -634,6 +634,24 @@ audio {
   background: rgba(255, 192, 220, 0.14);
 }
 
+.birthday-decorations {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.birthday-decorations img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.86);
+  border-radius: 18px;
+  background: linear-gradient(135deg, #e7f5ff, #ffe5f2);
+  box-shadow: 0 10px 22px rgba(155, 137, 220, 0.14);
+}
+
 .hero-memory {
   text-align: center;
   padding-top: 34px;
