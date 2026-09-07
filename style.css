@@ -220,6 +220,39 @@ button {
   color: #8d5c7c;
 }
 
+.color-chip {
+  cursor: pointer;
+  font: inherit;
+}
+
+.color-chip.selected {
+  outline: 3px solid rgba(111, 131, 201, 0.22);
+  outline-offset: 2px;
+  transform: translateY(-2px);
+}
+
+body.theme-blue {
+  background:
+    radial-gradient(circle at top left, rgba(126, 202, 255, 0.56), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(255, 194, 222, 0.24), transparent 28%),
+    linear-gradient(135deg, #f2faff 0%, #e2f3ff 48%, #fff3f8 100%);
+}
+
+body.theme-pink {
+  background:
+    radial-gradient(circle at top left, rgba(255, 185, 218, 0.54), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(171, 218, 255, 0.28), transparent 28%),
+    linear-gradient(135deg, #fff4fa 0%, #ffe8f3 48%, #eef8ff 100%);
+}
+
+body.theme-blue .card {
+  border-color: rgba(157, 213, 255, 0.78);
+}
+
+body.theme-pink .card {
+  border-color: rgba(255, 181, 216, 0.78);
+}
+
 .cta-row {
   margin-top: 28px;
 }

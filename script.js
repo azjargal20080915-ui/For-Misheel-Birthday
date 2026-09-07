@@ -3,8 +3,23 @@ const photoCounter = document.getElementById('photoCounter');
 const birthdayAudio = document.getElementById('birthdayAudio');
 const trackTitle = document.getElementById('trackTitle');
 const songOptions = Array.from(document.querySelectorAll('.song-option'));
+const themeOptions = Array.from(document.querySelectorAll('[data-theme]'));
 
 let activeSlide = 0;
+
+function setTheme(theme) {
+  document.body.classList.remove('theme-blue', 'theme-pink');
+  document.body.classList.add(`theme-${theme}`);
+  themeOptions.forEach((option) => option.classList.toggle('selected', option.dataset.theme === theme));
+  localStorage.setItem('birthdayTheme', theme);
+}
+
+const savedTheme = localStorage.getItem('birthdayTheme') || 'blue';
+setTheme(savedTheme);
+
+themeOptions.forEach((option) => {
+  option.addEventListener('click', () => setTheme(option.dataset.theme));
+});
 
 function updateCounter() {
   if (!photoCounter || !slides.length) return;
