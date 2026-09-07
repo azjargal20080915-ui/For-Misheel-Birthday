@@ -294,6 +294,36 @@ audio {
   border-radius: 18px;
 }
 
+.volume-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.volume-btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(143, 121, 255, 0.18);
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f8f0ff, #edf7ff);
+  color: #4d4067;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+#volumeSlider {
+  flex: 1;
+  accent-color: var(--purple);
+}
+
+#volumeLabel {
+  min-width: 3.5rem;
+  text-align: right;
+}
+
 .surprise {
   position: relative;
   margin-top: 28px;

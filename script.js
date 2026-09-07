@@ -3,6 +3,10 @@ const photoCounter = document.getElementById('photoCounter');
 const birthdayAudio = document.getElementById('birthdayAudio');
 const trackTitle = document.getElementById('trackTitle');
 const songOptions = Array.from(document.querySelectorAll('.song-option'));
+const volumeDown = document.getElementById('volumeDown');
+const volumeUp = document.getElementById('volumeUp');
+const volumeSlider = document.getElementById('volumeSlider');
+const volumeLabel = document.getElementById('volumeLabel');
 
 let activeSlide = 0;
 
@@ -77,6 +81,30 @@ function selectTrack(button) {
   if (trackTitle) {
     trackTitle.textContent = title;
   }
+}
+
+function setVolume(value) {
+  if (!birthdayAudio) return;
+
+  const volume = Math.min(1, Math.max(0, Number(value)));
+  birthdayAudio.volume = volume;
+
+  if (volumeSlider) volumeSlider.value = volume;
+  if (volumeLabel) volumeLabel.textContent = `${Math.round(volume * 100)}%`;
+}
+
+if (birthdayAudio) setVolume(birthdayAudio.volume);
+
+if (volumeDown) {
+  volumeDown.addEventListener('click', () => setVolume((birthdayAudio?.volume ?? 1) - 0.1));
+}
+
+if (volumeUp) {
+  volumeUp.addEventListener('click', () => setVolume((birthdayAudio?.volume ?? 1) + 0.1));
+}
+
+if (volumeSlider) {
+  volumeSlider.addEventListener('input', (event) => setVolume(event.target.value));
 }
 
 songOptions.forEach((button) => {
