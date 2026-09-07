@@ -242,6 +242,14 @@ button {
   box-shadow: 0 15px 30px rgba(255, 145, 198, 0.35);
 }
 
+.secondary-btn {
+  display: inline-block;
+  margin-top: 12px;
+  color: #6555a2;
+  font-weight: 800;
+  text-decoration: none;
+}
+
 .primary-btn:hover,
 .song-btn:hover,
 .nav-btn:hover {
@@ -321,36 +329,6 @@ audio {
   width: 100%;
   filter: saturate(1.15) contrast(1.04);
   border-radius: 18px;
-}
-
-.volume-controls {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: var(--muted);
-  font-weight: 700;
-}
-
-.volume-btn {
-  width: 40px;
-  height: 40px;
-  border: 1px solid rgba(143, 121, 255, 0.18);
-  border-radius: 50%;
-  background: linear-gradient(135deg, #f8f0ff, #edf7ff);
-  color: #4d4067;
-  font-size: 1.4rem;
-  line-height: 1;
-  cursor: pointer;
-}
-
-#volumeSlider {
-  flex: 1;
-  accent-color: var(--purple);
-}
-
-#volumeLabel {
-  min-width: 3.5rem;
-  text-align: right;
 }
 
 .surprise {
@@ -836,5 +814,170 @@ audio {
 
   .stat-row {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.games-page {
+  min-height: 100vh;
+  padding: 32px 16px 70px;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(164, 225, 255, 0.72), transparent 22%),
+    radial-gradient(circle at 88% 16%, rgba(255, 207, 228, 0.74), transparent 24%),
+    linear-gradient(135deg, #fffafc 0%, #edf7ff 48%, #fff1f7 100%);
+}
+
+.games-shell {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.games-header {
+  margin: 18px 0 24px;
+  padding: 30px;
+  text-align: center;
+}
+
+.games-header h1 {
+  color: #5a4f8d;
+  font-size: clamp(2.4rem, 6vw, 4.6rem);
+  margin-bottom: 12px;
+}
+
+.games-header p:not(.eyebrow) {
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.games-header strong {
+  color: #d66b9e;
+  font-size: 1.15rem;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.game-card {
+  padding: 24px;
+}
+
+.game-card h2 {
+  color: #5a4f8d;
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  margin-bottom: 8px;
+}
+
+.game-card > p:not(.game-number) {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.game-number {
+  color: var(--purple);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.game-btn,
+.color-choices button,
+.rps-choices button,
+.quiz-choices button {
+  border: 1px solid rgba(143, 121, 255, 0.18);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #edf7ff, #ffe7f3);
+  color: #4d4067;
+  padding: 10px 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.game-btn:hover,
+.color-choices button:hover,
+.rps-choices button:hover,
+.quiz-choices button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(173, 150, 255, 0.18);
+}
+
+.star-game {
+  position: relative;
+  height: 170px;
+  margin: 16px 0 8px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #dff1ff, #ffe1f0);
+}
+
+#starTarget {
+  position: absolute;
+  border: 0;
+  background: transparent;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#starTarget:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 16px 0 10px;
+}
+
+.memory-card-game {
+  min-height: 62px;
+  border: 1px solid rgba(143, 121, 255, 0.18);
+  border-radius: 16px;
+  background: #eef7ff;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.memory-card-game.revealed,
+.memory-card-game.matched {
+  background: #ffe7f3;
+}
+
+.color-choices,
+.rps-choices,
+.quiz-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0 12px;
+}
+
+.inline-form {
+  display: flex;
+  gap: 10px;
+  margin: 18px 0 12px;
+}
+
+.inline-form input {
+  width: 100px;
+  border: 1px solid rgba(143, 121, 255, 0.22);
+  border-radius: 999px;
+  padding: 10px 14px;
+  color: var(--text);
+  font: inherit;
+}
+
+@media (max-width: 700px) {
+  .games-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .games-header {
+    padding: 24px 18px;
   }
 }

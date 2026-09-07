@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birthday Games for Misheel</title>
+    <meta name="description" content="Small birthday games for Misheel." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="games-page">
+    <main class="games-shell">
+      <a class="back-link" href="./index.html">← Back to the birthday page</a>
+
+      <header class="games-header card">
+        <p class="eyebrow">A little birthday fun</p>
+        <h1>Birthday games for Misheel 🎮</h1>
+        <p>Try all six games and collect some happy birthday points!</p>
+        <strong id="gameScore">Score: 0</strong>
+      </header>
+
+      <div class="games-grid">
+        <section class="game-card card">
+          <p class="game-number">Game 1</p>
+          <h2>Catch the star ⭐</h2>
+          <p>Click the star as many times as you can in 15 seconds.</p>
+          <div class="star-game" id="starGame"><button id="starTarget" type="button" aria-label="Catch the star">⭐</button></div>
+          <p id="starStatus">Ready?</p>
+          <button class="game-btn" id="startStar" type="button">Start game</button>
+        </section>
+
+        <section class="game-card card">
+          <p class="game-number">Game 2</p>
+          <h2>Memory match 🧠</h2>
+          <p>Find the two matching birthday cards.</p>
+          <div class="memory-grid" id="memoryGrid">
+            <button class="memory-card-game" type="button" data-card="cake">?</button>
+            <button class="memory-card-game" type="button" data-card="star">?</button>
+            <button class="memory-card-game" type="button" data-card="cake">?</button>
+            <button class="memory-card-game" type="button" data-card="star">?</button>
+          </div>
+          <p id="memoryStatus">Find a pair.</p>
+          <button class="game-btn" id="resetMemory" type="button">Reset cards</button>
+        </section>
+
+        <section class="game-card card">
+          <p class="game-number">Game 3</p>
+          <h2>Guess the color 🎨</h2>
+          <p>Pick the color you think the game chose.</p>
+          <div class="color-choices" id="colorChoices">
+            <button type="button" data-color="pink">Pink</button>
+            <button type="button" data-color="blue">Blue</button>
+            <button type="button" data-color="yellow">Yellow</button>
+          </div>
+          <p id="colorStatus">Choose one.</p>
+        </section>
+
+        <section class="game-card card">
+          <p class="game-number">Game 4</p>
+          <h2>Birthday number 🎂</h2>
+          <p>Guess the secret number from 1 to 10.</p>
+          <div class="inline-form">
+            <input id="numberGuess" type="number" min="1" max="10" placeholder="1-10" />
+            <button class="game-btn" id="guessNumber" type="button">Guess</button>
+          </div>
+          <p id="numberStatus">You have three tries.</p>
+        </section>
+
+        <section class="game-card card">
+          <p class="game-number">Game 5</p>
+          <h2>Rock, paper, scissors ✊</h2>
+          <p>Choose one and play against the page.</p>
+          <div class="rps-choices" id="rpsChoices">
+            <button type="button" data-choice="rock">✊ Rock</button>
+            <button type="button" data-choice="paper">✋ Paper</button>
+            <button type="button" data-choice="scissors">✌️ Scissors</button>
+          </div>
+          <p id="rpsStatus">Your turn!</p>
+        </section>
+
+        <section class="game-card card">
+          <p class="game-number">Game 6</p>
+          <h2>Birthday quiz 💖</h2>
+          <p>What makes today special?</p>
+          <div class="quiz-choices" id="quizChoices">
+            <button type="button" data-answer="no">A rainy Tuesday</button>
+            <button type="button" data-answer="yes">Misheel's birthday</button>
+            <button type="button" data-answer="no">A math test</button>
+          </div>
+          <p id="quizStatus">Pick an answer.</p>
+        </section>
+      </div>
+    </main>
+    <script src="challenge.js"></script>
+  </body>
+</html>
