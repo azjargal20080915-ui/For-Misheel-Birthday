@@ -168,5 +168,38 @@ document.querySelectorAll('#quizChoices button').forEach((button) => {
 	});
 });
 
+const cakeCandles = Array.from(document.querySelectorAll('.cake-candle'));
+const cakeStatus = document.getElementById('cakeStatus');
+const resetCake = document.getElementById('resetCake');
+
+function resetCakeGame() {
+	cakeCandles.forEach((candle) => {
+		candle.disabled = false;
+		candle.textContent = '🔥';
+		candle.classList.remove('blown-out');
+	});
+	if (cakeStatus) cakeStatus.textContent = 'Three candles are waiting for you.';
+}
+
+cakeCandles.forEach((candle) => {
+	candle.addEventListener('click', () => {
+		if (candle.disabled) return;
+		candle.disabled = true;
+		candle.textContent = '💨';
+		candle.classList.add('blown-out');
+		addScore(1);
+
+		const candlesLeft = cakeCandles.filter((item) => !item.disabled).length;
+		if (candlesLeft === 0) {
+			cakeStatus.textContent = 'Wish granted! Happy birthday, Misheel! 🎉';
+			addScore(5);
+		} else {
+			cakeStatus.textContent = `${candlesLeft} candle${candlesLeft === 1 ? '' : 's'} left!`;
+		}
+	});
+});
+
+if (resetCake) resetCake.addEventListener('click', resetCakeGame);
+
 const resetMemory = document.getElementById('resetMemory');
 if (resetMemory) resetMemory.addEventListener('click', resetMemoryCards);

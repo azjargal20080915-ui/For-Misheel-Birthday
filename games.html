@@ -99,6 +99,22 @@
           </div>
           <p id="quizStatus">Pick an answer.</p>
         </section>
+
+        <section class="game-card cake-game-card card">
+          <p class="game-number">Bonus game</p>
+          <h2>Make a birthday wish 🎂</h2>
+          <p>Click every candle to blow them out. Make a wish before the cake disappears!</p>
+          <div class="birthday-cake" id="birthdayCake" aria-label="Birthday cake with candles">
+            <button class="cake-candle" type="button" aria-label="Blow out candle 1">🔥</button>
+            <button class="cake-candle" type="button" aria-label="Blow out candle 2">🔥</button>
+            <button class="cake-candle" type="button" aria-label="Blow out candle 3">🔥</button>
+            <div class="cake-icing"></div>
+            <div class="cake-body"></div>
+            <div class="cake-plate"></div>
+          </div>
+          <p id="cakeStatus">Three candles are waiting for you.</p>
+          <button class="game-btn" id="resetCake" type="button">Light candles again</button>
+        </section>
       </div>
     </main>
     <script src="challenge.js"></script>

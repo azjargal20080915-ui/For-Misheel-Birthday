@@ -1088,6 +1088,70 @@ audio {
   font: inherit;
 }
 
+.birthday-cake {
+  position: relative;
+  height: 150px;
+  margin: 16px 0 10px;
+  padding-top: 18px;
+  text-align: center;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #e4f4ff, #ffe5f2);
+  overflow: hidden;
+}
+
+.cake-candle {
+  position: relative;
+  z-index: 2;
+  width: 42px;
+  height: 52px;
+  margin: 0 5px;
+  border: 0;
+  border-radius: 16px 16px 8px 8px;
+  background: #fff0a6;
+  font-size: 1.35rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.cake-candle:hover {
+  transform: translateY(-5px) rotate(3deg);
+}
+
+.cake-candle.blown-out {
+  opacity: 0.65;
+  background: #d9e8f2;
+  cursor: default;
+}
+
+.cake-icing,
+.cake-body,
+.cake-plate {
+  position: absolute;
+  left: 15%;
+  right: 15%;
+}
+
+.cake-icing {
+  bottom: 48px;
+  height: 30px;
+  border-radius: 18px 18px 8px 8px;
+  background: #ff9fc7;
+}
+
+.cake-body {
+  bottom: 18px;
+  height: 42px;
+  border-radius: 8px 8px 16px 16px;
+  background: #ffe59a;
+}
+
+.cake-plate {
+  bottom: 10px;
+  height: 12px;
+  border-radius: 50%;
+  background: #9ec8ff;
+}
+
 @media (max-width: 700px) {
   .games-grid {
     grid-template-columns: 1fr;
