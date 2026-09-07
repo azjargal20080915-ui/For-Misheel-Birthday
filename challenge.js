@@ -1,9 +1,18 @@
 const gameScore = document.getElementById('gameScore');
+const gameMessage = document.getElementById('gameMessage');
 let score = 0;
+const funnyMessages = [
+	'The birthday committee approves.',
+	'That was suspiciously impressive.',
+	'The cake is cheering for you.',
+	'Professional cousin energy detected.',
+	'Your score is wearing sparkles.'
+];
 
 function addScore(points) {
 	score += points;
-	if (gameScore) gameScore.textContent = `Score: ${score}`;
+	if (gameScore) gameScore.textContent = score;
+	if (gameMessage) gameMessage.textContent = funnyMessages[Math.floor(Math.random() * funnyMessages.length)];
 }
 
 const starGame = document.getElementById('starGame');

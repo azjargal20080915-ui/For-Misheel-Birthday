@@ -11,33 +11,38 @@
       href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css?v=games2" />
   </head>
   <body class="games-page">
     <main class="games-shell">
       <a class="back-link" href="./index.html">← Back to the birthday page</a>
 
       <header class="games-header card">
+        <div class="game-confetti" aria-hidden="true">✦ ✧ ✦ ✧ ✦</div>
         <p class="eyebrow">A little birthday fun</p>
-        <h1>Birthday games for Misheel 🎮</h1>
-        <p>Try all six games and collect some happy birthday points!</p>
-        <strong id="gameScore">Score: 0</strong>
+        <h1>Misheel's birthday arcade 🎮</h1>
+        <p>Six tiny games. One birthday champion. Please defeat the computer with style.</p>
+        <div class="score-panel">
+          <span>Birthday points</span>
+          <strong id="gameScore">0</strong>
+          <small id="gameMessage">Your cousin believes in you.</small>
+        </div>
       </header>
 
       <div class="games-grid">
-        <section class="game-card card">
+        <section class="game-card star-card card">
           <p class="game-number">Game 1</p>
           <h2>Catch the star ⭐</h2>
-          <p>Click the star as many times as you can in 15 seconds.</p>
+          <p>Catch the star before it escapes. It is tiny, dramatic, and very fast.</p>
           <div class="star-game" id="starGame"><button id="starTarget" type="button" aria-label="Catch the star">⭐</button></div>
           <p id="starStatus">Ready?</p>
           <button class="game-btn" id="startStar" type="button">Start game</button>
         </section>
 
-        <section class="game-card card">
+        <section class="game-card memory-game-card card">
           <p class="game-number">Game 2</p>
           <h2>Memory match 🧠</h2>
-          <p>Find the two matching birthday cards.</p>
+          <p>Find the matching cake and star. Your brain is wearing a party hat.</p>
           <div class="memory-grid" id="memoryGrid">
             <button class="memory-card-game" type="button" data-card="cake">?</button>
             <button class="memory-card-game" type="button" data-card="star">?</button>
@@ -48,10 +53,10 @@
           <button class="game-btn" id="resetMemory" type="button">Reset cards</button>
         </section>
 
-        <section class="game-card card">
+        <section class="game-card color-game-card card">
           <p class="game-number">Game 3</p>
           <h2>Guess the color 🎨</h2>
-          <p>Pick the color you think the game chose.</p>
+          <p>Pick the secret color. The color has refused to give us any clues.</p>
           <div class="color-choices" id="colorChoices">
             <button type="button" data-color="pink">Pink</button>
             <button type="button" data-color="blue">Blue</button>
@@ -60,10 +65,10 @@
           <p id="colorStatus">Choose one.</p>
         </section>
 
-        <section class="game-card card">
+        <section class="game-card number-game-card card">
           <p class="game-number">Game 4</p>
           <h2>Birthday number 🎂</h2>
-          <p>Guess the secret number from 1 to 10.</p>
+          <p>Guess the secret number from 1 to 10. No calculator. No asking the cake.</p>
           <div class="inline-form">
             <input id="numberGuess" type="number" min="1" max="10" placeholder="1-10" />
             <button class="game-btn" id="guessNumber" type="button">Guess</button>
@@ -71,10 +76,10 @@
           <p id="numberStatus">You have three tries.</p>
         </section>
 
-        <section class="game-card card">
+        <section class="game-card rps-game-card card">
           <p class="game-number">Game 5</p>
           <h2>Rock, paper, scissors ✊</h2>
-          <p>Choose one and play against the page.</p>
+          <p>Battle the computer. It has been training all morning.</p>
           <div class="rps-choices" id="rpsChoices">
             <button type="button" data-choice="rock">✊ Rock</button>
             <button type="button" data-choice="paper">✋ Paper</button>
@@ -83,10 +88,10 @@
           <p id="rpsStatus">Your turn!</p>
         </section>
 
-        <section class="game-card card">
+        <section class="game-card quiz-game-card card">
           <p class="game-number">Game 6</p>
           <h2>Birthday quiz 💖</h2>
-          <p>What makes today special?</p>
+          <p>One easy question. If you miss it, the balloons will know.</p>
           <div class="quiz-choices" id="quizChoices">
             <button type="button" data-answer="no">A rainy Tuesday</button>
             <button type="button" data-answer="yes">Misheel's birthday</button>
